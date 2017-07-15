@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +26,22 @@ maxinum-scale=1.0, user-scalable=no">
             <li><a href="#">Produce</a> </li>
         </ul>
     </nav>
+
+    <!--div id="myCarousel" class="carousel slider"-->
+    <div class="slider">
+        <ul>
+            <li class="item"><a href="#" target="_blank"><img src="/static/imgs/lunbo1.jpg" alt="lunbo1"></a> </li>
+            <li><a href="#" target="_blank"><img src="/static/imgs/lunbo2.jpg" alt="lunbo2"></a> </li>
+            <li><a href="#" target="_blank"><img src="/static/imgs/lunbo3.jpg" alt="lunbo3"></a> </li>
+            <li><a href="#" target="_blank"><img src="/static/imgs/lunbo4.jpg" alt="lunbo4"></a> </li>
+            <li><a href="#" target="_blank"><img src="/static/imgs/lunbo5.jpg" alt="lunbo5"></a> </li>
+            <li><a href="#" target="_blank"><img src="/static/imgs/lunbo6.jpg" alt="lunbo6"></a> </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="/static/js/yxMobileSlider.js"></script>
+    <script>
+        $(".slider").yxMobileSlider({width:640, height=320, during=3000})
+    </script>
 </header>
     <div></div>
     <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>

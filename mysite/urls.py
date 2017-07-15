@@ -20,7 +20,8 @@ import lvhang.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', cmdb.views.index),
+    url(r'^tangshi/', cmdb.views.tangshi),
     url(r'^lvhang/',lvhang.views.lvhang),
     url(r'^login/', lvhang.views.login),
+    url(r'^time/', cmdb.views.time),
 ]
