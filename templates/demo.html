@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    It is now
+    <h1>My helpful timestamp site</h1>
+    {% block content %}{% endblock %}
+    {% block foot %}
+        <hr>
+        <P>Thanks for visiting my site...</P>
+    {% endblock %}
 </body>
 </html>

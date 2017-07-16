@@ -20,8 +20,11 @@ import lvhang.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^tangshi/', cmdb.views.tangshi),
-    url(r'^lvhang/',lvhang.views.lvhang),
-    url(r'^login/', lvhang.views.login),
-    url(r'^time/', cmdb.views.time),
+    url(r'^tangshi/$', cmdb.views.tangshi),
+    url(r'^lvhang/$',lvhang.views.lvhang),
+    url(r'^login/$', lvhang.views.login),
+    url(r'^time/$', cmdb.views.time),
+    url(r'^time/(\d{1,2})/$', cmdb.views.hours_ahead),
+    url(r'^demo/$', cmdb.views.demo),
+    url(r'^test/$', cmdb.views.ptedb_list),
 ]
