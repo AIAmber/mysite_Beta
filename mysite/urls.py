@@ -17,8 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 import cmdb.views
 import lvhang.views
+import blog.views
 
 urlpatterns = [
+    url(r'^$', blog.views.get_blogs, name='blog_get_blogs'),
+    url(r'^detail/(\d+)/$',blog.views.get_detail, name = 'blog_get_detail'),
     url(r'^admin/', admin.site.urls),
     url(r'^tangshi/$', cmdb.views.tangshi),
     url(r'^lvhang/$',lvhang.views.lvhang),
