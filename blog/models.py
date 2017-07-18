@@ -35,8 +35,8 @@ class Comment(models.Model):
 
     blog = models.ForeignKey(Blog, verbose_name='Blog')
 
-    name = models.CharField('Name', max_length=16)
+    name = models.CharField('Name', max_length=64)
     email = models.EmailField('Email')
-    content = models.CharField('Content', max_length=140)
+    content = models.CharField('Content', max_length=255)
 
     created = models.DateTimeField('Created Time', auto_now_add=True)

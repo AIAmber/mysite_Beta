@@ -23,7 +23,7 @@ def get_detail(request, blog_id):
         form = CommentForm(request.POST)
         if form.is_valid():
             cleaned_data = form.changed_data
-            #cleaned_data['blog'] = blog
+            cleaned_data['blog'] = blog
             Comment.objects.create(**cleaned_data)
 
     ctx = {

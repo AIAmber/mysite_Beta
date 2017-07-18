@@ -18,6 +18,8 @@ from django.contrib import admin
 import cmdb.views
 import lvhang.views
 import blog.views
+from mysite import settings
+from django.views import static
 
 urlpatterns = [
     url(r'^$', blog.views.get_blogs, name='blog_get_blogs'),
@@ -30,4 +32,6 @@ urlpatterns = [
     url(r'^time/(\d{1,2})/$', cmdb.views.hours_ahead),
     url(r'^demo/$', cmdb.views.demo),
     url(r'^test/$', cmdb.views.ptedb_list),
+
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
