@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>Amber's Blogs</title>
     <style>
         .blog{
@@ -17,16 +16,6 @@
     </style>
 </head>
 <body>
-<div class="topbar">
-    <div class="topbody">
-        <ul class="toplist">
-            <li><a href="/">Blog</a> </li>
-            <li><a href="/demo">Time</a> </li>
-            <li><a href="/lvhang">Lvhang</a> </li>
-            <li><a href="/login">Login</a> </li>
-        </ul>
-    </div>
-</div>
 
 <div class="header">
     <h1>Amber's blogs</h1>
@@ -38,9 +27,9 @@
         <a href="{% url 'blog_get_detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
     </div>
     <div class="info">
-        <span class="category">{{ blog.category.name }}</span>
-        <span class="author">{{ blog.author }}</span>
-        <span class="created">{{ blog.created|date:"Y-m-d H:i" }}</span>
+        <span class="category" style="color: #ff9900;">{{ blog.category.name }}</span>
+        <span class="author" style="color:#4a86e8;">{{ blog.author }}</span>
+        <span class="created" style="color: #6aa84f;">{{ blog.created|date:"Y-m-d H:i" }}</span>
     </div>
     <div class="summary">
         {{ blog.content|truncatewords:100 }}
@@ -48,10 +37,10 @@
 </div>
 {% endfor %}
 
-<footer>
-    <p><a href="/">A.I.Amber</a></p>
+<div class="footer">
+    <p><a href="http://www.testeabc.xyz">A.I.Amber</a></p>
     <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
-</footer>
+</div>
 
 </body>
 </html>

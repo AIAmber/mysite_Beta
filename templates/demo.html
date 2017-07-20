@@ -2,14 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<div class="topbar">
+    <div class="topbody">
+        <ul class="toplist">
+            <li><a href="/">Blog</a> </li>
+            <li><a href="/demo">Time</a> </li>
+            <li><a href="/lvhang">Lvhang</a> </li>
+            <li><a href="/login">Login</a> </li>
+        </ul>
+    </div>
+</div>
+
+<div class="header">
     <h1>My helpful timestamp site</h1>
+</div>
+
+<div class="summary">
     {% block content %}{% endblock %}
+</div>
+
+<div class="footer">
     {% block foot %}
         <hr>
         <P>Thanks for visiting my site...</P>
     {% endblock %}
+</div>
 </body>
 </html>

@@ -2,17 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>Login</title>
 </head>
 <body>
+<div class="topbar">
+    <div class="topbody">
+        <ul class="toplist">
+            <li><a href="/">Blog</a> </li>
+            <li><a href="/demo">Time</a> </li>
+            <li><a href="/lvhang">Lvhang</a> </li>
+            <li><a href="/login">Login</a> </li>
+        </ul>
+    </div>
+</div>
+
+<div class="header">
     <h1 style="...">Please input your account...</h1>
+</div>
+
+<div class="info">
     <form action="/login/" method="post">
         <input type="text" name="username"/>
         <input type="password" name="password"/>
         <input type="submit" name="submit"/>
     </form>
-    <hr />
-    <h1 style="...">Users Show</h1>
+</div>
+
+<hr />
+
+<div class="summary">
+    <div class="header">
+        <h1 style="...">Users Show</h1>
+    </div>
     <table border="1">
         <thead>
             <th>username</th>
@@ -27,6 +49,7 @@
             {% endfor %}
         </tbody>
     </table>
+</div>
 
     <script src="/static/js/jquery-1.12.4.js"></script>
 </body>

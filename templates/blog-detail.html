@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>{{ blog.title }}</title>
     <style>
         .blog{
@@ -16,11 +17,21 @@
     </style>
 </head>
 <body>
-
+<div class="topbar">
+    <div class="topbody">
+        <ul class="toplist">
+            <li><a href="/">Blog</a> </li>
+            <li><a href="/demo">Time</a> </li>
+            <li><a href="/lvhang">Lvhang</a> </li>
+            <li><a href="/login">Login</a> </li>
+        </ul>
+    </div>
+</div>
+<!--
 <div class="header">
     <span><a href="{% url 'blog_get_blogs' %}">Blogs</a> - <a href="{% url 'blog_get_detail' blog.id %}">{{ blog.title }}</a> </span>
 </div>
-
+-->
 <div class="content">
     <div class="blog">
         <div class="title">
@@ -64,10 +75,10 @@
     </div>
 </div>
 
-<div class="footer">
-    <p><a href="http://www.testeabc.xyz">A.I.Amber</a></p>
+<footer>
+    <p><a href="/">A.I.Amber</a></p>
     <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
-</div>
+</footer>
 
 </body>
 </html>

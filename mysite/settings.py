@@ -26,7 +26,7 @@ SECRET_KEY = 'y&$2vlgkkark!@n2%i(z*wkt%bib3vbk-au#%52mf4_f1qldph'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['120.76.145.62','testeabc.xyz','www.testeabc.xyz','127.0.0.1',]
+ALLOWED_HOSTS = ['120.76.145.62','testeabc.xyz','www.testeabc.xyz','127.0.0.1','localhost',]
 
 
 # Application definition
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static1')
 
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
