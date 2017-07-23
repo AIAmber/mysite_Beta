@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.css">
+    <script src="/static/js/picturefill.js"></script>
+    <script src="/static/js/swipe.js"></script>
     <title>Amber's Blogs</title>
-    <style>
-        .blog{
-            padding: 20px 0px;
-        }
-        .blog .info span{
-            padding-right: 10px;
-        }
-        .blog .summary{
-            padding-top: 20px;
-        }
-    </style>
 </head>
 <body>
+<!--Top bar-->
 <div class="topbar">
     <div class="topbody">
         <ul class="toplist">
@@ -28,29 +22,71 @@
     </div>
 </div>
 
-<div class="header">
-    <h1>Amber's blogs</h1>
+<header id="header">
+    <div class="container">
+        <h1>Amber's blogs</h1>
+        <h2>About A.I, or The FUTURE</h2>
+    </div>
+</header>
+
+<div class="container">
+    <a href="#nav" class="open toggle-btn"><i class="icon-reorder"></i> </a>
+    <nav id="nav">
+        <ul>
+            <li><a href="#" class="active">Item 1</a> </li>
+            <li><a href="#">Item 2</a> </li>
+            <li><a href="#">Item 3</a> </li>
+            <li><a href="#">Item 4</a> </li>
+            <li><a href="#">Item 5</a> </li>
+        </ul>
+        <a href="#top" class="close toggle-btn"><i class="icon-remove-sign"></i> </a>
+    </nav>
+    <div id="showcase">
+        <div id="slider" class="swipe">
+            <div class="swipe-wrap">
+                <div><img src="http://foraxes.oss-cn-shanghai.aliyuncs.com/blog/04.jpg" alt=""></div>
+                <div><img src="http://foraxes.oss-cn-shanghai.aliyuncs.com/blog/02.jpg" alt=""></div>
+                <div><img src="http://foraxes.oss-cn-shanghai.aliyuncs.com/blog/03.jpg" alt=""></div>
+            </div>
+            <div class="slider-control">
+                <button class="left" onclick="mySwipe.prev()"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>
+                <button class="right" onclick="mySwipe.next()"><i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+            </div>
+        </div>
+        <script>
+            window.mySwipe = Swipe(document.getElementById('slider'));
+        </script>
+    </div>
+
+    {% for blog in blogs %}
+        <article id="mainbody">
+            <div class="blog">
+                <div class="title">
+                    <a href="{% url 'blog_get_detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+                </div>
+                <div class="info">
+                    <span class="category">{{ blog.category.name }}</span>
+                    <span class="author">{{ blog.author }}</span>
+                    <span class="created">{{ blog.created|date:"Y-m-d H:i" }}</span>
+                </div>
+                <div class="summary">
+                    {{ blog.content|truncatewords:100 }}
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+
+    <aside id="sidebar">
+        <h3>Side-Bar</h3>
+        <p>Plesse write something in it...</p>
+    </aside>
 </div>
 
-{% for blog in blogs %}
-<div class="blog">
-    <div class="title">
-        <a href="{% url 'blog_get_detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+<footer id="footer">
+    <div class="container">
+        <h5><a href="/">&copy; A.I.Amber</a></h5>
+        <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
     </div>
-    <div class="info">
-        <span class="category">{{ blog.category.name }}</span>
-        <span class="author">{{ blog.author }}</span>
-        <span class="created">{{ blog.created|date:"Y-m-d H:i" }}</span>
-    </div>
-    <div class="summary">
-        {{ blog.content|truncatewords:100 }}
-    </div>
-</div>
-{% endfor %}
-
-<footer>
-    <p><a href="/">A.I.Amber</a></p>
-    <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
 </footer>
 
 </body>

@@ -56,3 +56,6 @@ def ptedb_list(request):
     ptedb.close()
     return render(request, 'tangshi.html', {'names' : names})
 
+def photo(request):
+    return render(request, 'viewport.html')
+
