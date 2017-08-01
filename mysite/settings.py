@@ -87,6 +87,10 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'Bang103.',
+        'OPTIONS':{
+            'read_default_file': os.path.dirname(os.path.abspath(__file__))+'/my.cnf',
+            'init_command': 'SET sql_mode=STRICT_TRANS_TABLES',
+        }
     }
 }
 
