@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^time/$', cmdb.views.time),
     url(r'^time/(\d{1,2})/$', cmdb.views.hours_ahead),
     url(r'^demo/$', cmdb.views.demo),
-    url(r'^test/$', cmdb.views.ptedb_list),
+    url(r'^test/$', cmdb.views.ptmpdb_list),
     url(r'^photo/$', cmdb.views.photo),
 
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),

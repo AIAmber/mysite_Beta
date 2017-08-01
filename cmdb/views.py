@@ -42,18 +42,18 @@ def demo(request):
 
     #return render(request, "demo.html", {"current_date" : now})
 
-def ptedb_list(request):
-    ptedb = pymysql.connect(
+def ptmpdb_list(request):
+    ptmpdb = pymysql.connect(
         host = 'localhost',
         port = 3306,
         user = 'root',
-        passwd = 'Bang111.',
-        db = 'ptedb',
+        passwd = 'Bang103.',
+        db = 'ptmpdb',
     ) # Please save in Django's configure.
-    cursor = ptedb.cursor()
+    cursor = ptmpdb.cursor()
     cursor.execute('SELECT name FROM student ORDER BY name')
     names = [row[0] for row in cursor.fetchall()]
-    ptedb.close()
+    ptmpdb.close()
     return render(request, 'tangshi.html', {'names' : names})
 
 def photo(request):
