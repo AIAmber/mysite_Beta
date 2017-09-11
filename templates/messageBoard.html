@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://forcss.oss-cn-shanghai.aliyuncs.com/font-awesome/font-awesome.css">
+    <script src="/static/js/picturefill.js"></script>
+    <script src="/static/js/swipe.js"></script>
+    <title>Amber's Blogs</title>
+</head>
+
+<body>
+<header id="header">
+    <div class="container">
+        <h1>Amber's blogs</h1>
+        <h2>About A.I, or The FUTURE</h2>
+    </div>
+</header>
+
+<div class="container">
+    <a href="#nav" class="open toggle-btn"><i class="fa fa-caret-square-o-down"></i> </a>
+    <a href="#nav" class="close toggle-btn"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i> </a>
+    <nav id="nav">
+        <ul>
+            <li><a href="/">博客</a> </li>
+            <li><a href="/demo">时间</a> </li>
+            <li><a href="/lvhang">作品</a> </li>
+            <li><a href="/messageBoard" class="active">留言板</a> </li>
+            <li><a href="#">关于</a> </li>
+        </ul>
+        <a href="#top" class="close toggle-btn"><i class="icon-remove-sign"></i> </a>
+    </nav>
+
+    <article id="mainbody">
+        <div class="blog">
+            <div class="title">
+                <a href="#"><h5>如果您想对我说点什么，请写下您的留言</h5></a>
+            </div>
+            <div class="info">
+                <form action="/messageBoard/" method="post">
+                    姓名：<input type="text" name="name"/><br />
+                    邮箱：<input type="text" name="Email"/><br />
+                    内容：<input type="text" name="content"/><br />
+                    <input type="submit" name="submit"/>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <aside id="sidebar">
+        <h3>欢迎您访问本网站</h3>
+        <p>个人网站，正在不断优化。欢迎您向我提意见！</p>
+    </aside>
+
+    <article id="mainbody">
+        <div class="title">
+            <div class="header">
+                <h1 style="...">留言展示</h1>
+            </div>
+            <div class="info">
+                <table border="1">
+                    <thead>
+                        <th>昵称</th>
+                        <th>邮箱</th>
+                        <th>内容</th>
+                    </thead>
+                    <tbody>
+                        {% for line in data %}
+                            <tr>
+                                <td>{{ line.user }}</td>
+                                <td>{{ line.mail }}</td>
+                                <td>{{ line.message }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <h5><a href="/">&copy; A.I.Amber</a></h5>
+        <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
+    </div>
+</footer>
+</body>
+</html>

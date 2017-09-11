@@ -2,34 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://forcss.oss-cn-shanghai.aliyuncs.com/font-awesome/font-awesome.css">
+    <script src="/static/js/picturefill.js"></script>
+    <script src="/static/js/swipe.js"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body>
-<div class="topbar">
-    <div class="topbody">
-        <ul class="toplist">
-            <li><a href="/">Blog</a> </li>
-            <li><a href="/demo">Time</a> </li>
-            <li><a href="/lvhang">Lvhang</a> </li>
-            <li><a href="/login">Login</a> </li>
-        </ul>
+<header id="header">
+    <div class="container">
+        <h1>时间测试</h1>
+        <h2>About A.I, or The FUTURE</h2>
     </div>
+</header>
+
+<div class="container">
+    <a href="#nav" class="open toggle-btn"><i class="fa fa-caret-square-o-down"></i> </a>
+    <a href="#nav" class="close toggle-btn"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i> </a>
+    <nav id="nav">
+        <ul>
+            <li><a href="/">博客</a> </li>
+            <li><a href="/demo" class="active">时间</a> </li>
+            <li><a href="/lvhang">作品</a> </li>
+            <li><a href="/messageBoard">留言板</a> </li>
+            <li><a href="#">关于</a> </li>
+        </ul>
+        <a href="#top" class="close toggle-btn"><i class="icon-remove-sign"></i> </a>
+    </nav>
+
+    <article id="mainbody">
+    <div class="content">
+        <div class="blog">
+            <div class="title">
+                <a href="#"><h2>时间: America/Chicago </h2></a>
+                <h5>仅为纪念Django的诞生...</h5>
+            </div>
+            <div class="summary">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    </article>
+
+    <aside id="sidebar">
+    <div class="comment">
+        <div class="comments-display" style="padding-top: 20px;">
+            <h3>关于时间</h3>
+            <div class="comment-field" style="padding-top:10px;">
+                <p>此处为纪念Django的诞生地：美国/芝加哥</p>
+                <p><a href="/time/13">当前时区</a> </p>
+            </div>
+        </div>
+    </div>
+    </aside>
+
 </div>
 
-<div class="header">
-    <h1>My helpful timestamp site</h1>
-</div>
 
-<div class="summary">
-    {% block content %}{% endblock %}
-</div>
-
-<div class="footer">
-    {% block foot %}
-        <hr>
+<footer id="footer">
+    <div class="container">
         <P>Thanks for visiting my site...</P>
-    {% endblock %}
-</div>
+        <p><a href="/">A.I.Amber</a></p>
+        <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
+    </div>
+</footer>
+
 </body>
 </html>
