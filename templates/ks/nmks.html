@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://forcss.oss-cn-shanghai.aliyuncs.com/font-awesome/font-awesome.css">
+    <script src="/static/js/picturefill.js"></script>
+    <script src="/static/js/swipe.js"></script>
+    <title>Amber's Blogs</title>
+</head>
+
+<body>
+<header id="header">
+    <div class="container">
+        <h1>博弈查询</h1>
+        <h2>The page is for others...(NOT personal page.) </h2>
+    </div>
+</header>
+
+<div class="container">
+    <a href="#nav" class="open toggle-btn"><i class="fa fa-caret-square-o-down"></i> </a>
+    <a href="#nav" class="close toggle-btn"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i> </a>
+    <nav id="nav">
+        <ul>
+            <li><a href="/ks/ahks">安徽</a> </li>
+            <li><a href="/ks/bjks">北京</a> </li>
+            <li><a href="/ks/fjks">福建</a> </li>
+            <li><a href="/ks/gsks">甘肃</a> </li>
+            <li><a href="/ks/gxks">广西</a> </li>
+            <li><a href="/ks/hbks">湖北</a> </li>
+            <li><a href="/ks/hebks">河北</a> </li>
+            <li><a href="/ks/jsks">江苏</a> </li>
+            <li><a href="/ks/jxks">江西</a> </li>
+            <li><a href="/ks/nmks">内蒙</a> </li>
+            <li><a href="/ks/shks">上海</a> </li>
+            <li><a href="/ks/tjks">天津</a> </li>
+        </ul>
+        <a href="#top" class="close toggle-btn"><i class="icon-remove-sign"></i> </a>
+    </nav>
+</div>
+
+        <div class="title">
+            <div class="info">
+                <table border="1">
+                    <thead>
+                        <th>期数</th>
+                        <th>形态</th>
+                        <th>和值</th>
+                        <th>大小</th>
+                        <th>单双</th>
+                    </thead>
+                    <tbody>
+                        {% for line in ks_info_nh %}
+                            <tr>
+                                <td>{{ line.date }}</td>
+                                <td>{{ line.status }}</td>
+                                <td>{{ line.hezhi }}</td>
+                                <td>{{ line.BigS }}</td>
+                                <td>{{ line.SigD }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+<footer id="footer">
+    <div class="container">
+        <h5><a href="/">&copy; A.I.Amber</a></h5>
+        <P>Test©2017<a href="http://www.miitbeian.gov.cn">皖ICP备17013335号-1</a> </P>
+    </div>
+</footer>
+</body>
+</html>

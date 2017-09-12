@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^demo/$', cmdb.views.demo),
     url(r'^test/$', cmdb.views.ptmpdb_list),
     url(r'^photo/$', cmdb.views.photo),
-
+    url(r'^ks/$', lvhang.views.ks),
+    url(r'^ks/(ahks|bjks|fjks|gsks|gxks|hbks|hebks|jsks|jxks|nmks|shks|tjks)/$', lvhang.views.ks_info),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
