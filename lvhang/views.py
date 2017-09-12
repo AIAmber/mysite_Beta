@@ -29,8 +29,8 @@ def messageBoard(request):
     return render(request, "messageBoard.html", {"data" : message_list})
 
 def ks(request):
-    ks_demo = models.KSinfo.objects.all()
-    return render(request, "ks.html", {"ks_info" : ks_demo})
+    ks_demo = models.KSinfo_jsks.objects.all()
+    return render(request, "ks.html", {"ks_info_js" : ks_demo})
 
 def ks_info(request, offset):
     try:
